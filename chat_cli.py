@@ -110,7 +110,8 @@ OPERATOR COMMANDS (prefix with /):
         recent = assistant_msgs[-max_messages:]
         block = "\n\n".join(recent)
         if self.console:
-            self.console.print(block, style="blue")
+            # Keep literal text (e.g., [names]) instead of treating it as Rich markup tags.
+            self.console.print(block, style="blue", markup=False)
         else:
             print(block)
 
@@ -210,27 +211,11 @@ OPERATOR COMMANDS (prefix with /):
             return "HISTORY"
         
         elif cmd == "round2":
-            result = self.agent.start_round2_analysis()
-            if "error" in result:
-                print(f"❌ {result['error']}")
-            else:
-                if self.console:
-                    self.console.print("✅ Round 2 started", style="green")
-                else:
-                    print("✅ Round 2 started")
-                self._print_recent_assistant_messages(max_messages=3)
+            # Defer execution to main loop to avoid duplicate invocation.
             return "ROUND2"
         
         elif cmd == "round3":
-            result = self.agent.start_round3_final()
-            if "error" in result:
-                print(f"❌ {result['error']}")
-            else:
-                if self.console:
-                    self.console.print("✅ Round 3 started", style="green")
-                else:
-                    print("✅ Round 3 started")
-                self._print_recent_assistant_messages(max_messages=6)
+            # Defer execution to main loop to avoid duplicate invocation.
             return "ROUND3"
         
         elif cmd in ["exit", "quit", "q"]:
@@ -291,6 +276,9 @@ OPERATOR COMMANDS (prefix with /):
         
         if "error" in result:
             print(f"❌ {result['error']}")
+            available = [c.get("candidate_name", "") for c in self.agent.state.shortlist[:5] if c.get("candidate_name")]
+            if available:
+                print("Available in current shortlist:", ", ".join(available))
             return
         
         # Display comparison table
@@ -357,7 +345,12 @@ OPERATOR COMMANDS (prefix with /):
     
     def handle_questions(self, query: str):
         """Handle QUESTIONS intent."""
-        candidates = re.findall(r"\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)\b", query)
+        query_clean = query.strip()
+        # Case-insensitive extraction that supports lowercase and first-name inputs.
+        body = re.sub(r"(?i)^\s*generate\s+interview\s+questions\s+for\s+", "", query_clean)
+        body = re.sub(r"(?i)^\s*questions\s+for\s+", "", body)
+        body = body.strip(" .!?:;")
+        candidates = [body] if body else []
         
         if not candidates:
             print("❌ Please specify a candidate. Example: 'Generate interview questions for Sneha'")

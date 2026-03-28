@@ -406,7 +406,10 @@ Match Score: {cand.get('match_score')}/100
     
     def generate_interview_for_candidate(self, candidate_id: str) -> Dict[str, Any]:
         """Generate interview questions for a candidate."""
-        return generate_interview_questions(candidate_id, self.state, num_questions=5)
+        # Resolve partial names/paths first for better CLI UX.
+        cand = find_candidate_by_pattern(candidate_id, self.state)
+        resolved = cand.get("candidate_name") if cand else candidate_id
+        return generate_interview_questions(resolved, self.state, num_questions=5)
     
     def start_round2_analysis(self) -> Dict[str, Any]:
         """

@@ -254,6 +254,24 @@ def compare_candidates(candidate_ids: List[str], state: AgentState) -> Dict[str,
             cand = find_candidate_by_pattern(cand_id, state)
         
         if not cand:
+            # Fallback to aggregated candidate search (outside current shortlist).
+            for resume_path, agg in state.aggregated_candidates.items():
+                agg_name = str(agg.get("candidate_name", ""))
+                if cand_id.lower() in agg_name.lower() or cand_id.lower() in str(resume_path).lower():
+                    score_info = compute_score(agg, state.parsed_requirements, state.weights)
+                    cand = {
+                        "candidate_name": agg_name or "Unknown",
+                        "resume_path": resume_path,
+                        "match_score": score_info.get("match_score", 0),
+                        "matched_skills": score_info.get("matched_skills", []),
+                        "relevant_excerpts": agg.get("chunks", [])[:2],
+                        "semantic_score": score_info.get("semantic_score", 0.0),
+                        "skills_score": score_info.get("skills_score", 0.0),
+                        "must_have_score": score_info.get("must_have_score", 0.0),
+                    }
+                    break
+
+        if not cand:
             continue
         
         # Extract details from aggregated candidates if available
@@ -311,7 +329,17 @@ def generate_interview_questions(
     resume_path = cand.get("resume_path", "")
     agg_cand = state.aggregated_candidates.get(resume_path, {})
     candidate_name = cand.get("candidate_name", "Candidate")
-    candidate_skills = agg_cand.get("skills", [])
+    raw_skills = agg_cand.get("skills", [])
+    if isinstance(raw_skills, set):
+        candidate_skills = sorted(str(s) for s in raw_skills)
+    elif isinstance(raw_skills, list):
+        candidate_skills = [str(s) for s in raw_skills]
+    elif isinstance(raw_skills, str):
+        # Handles stringified sets like "{'python', 'docker'}".
+        cleaned = raw_skills.strip().strip("{}")
+        candidate_skills = [s.strip().strip("'\"") for s in cleaned.split(",") if s.strip()]
+    else:
+        candidate_skills = []
     
     # Try Gemini first
     gemini = get_gemini_client()
