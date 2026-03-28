@@ -14,6 +14,7 @@ Graph Structure:
 """
 
 import json
+import os
 from typing import Any, Dict, List, Optional
 from datetime import datetime
 
@@ -311,9 +312,14 @@ class MatchingAgent:
         Executes: parse_jd → extract_requirements → search_resumes →
                   rank_candidates → generate_report
         """
-        # Run graph until human_feedback_loop
-        for node, state_snapshot in self.graph.stream(self.state, {"recursion_limit": 25}):
-            self.state = state_snapshot
+        # Use invoke for compatibility across LangGraph stream output formats.
+        result_state = self.graph.invoke(self.state, {"recursion_limit": 25})
+        if isinstance(result_state, AgentState):
+            self.state = result_state
+        elif isinstance(result_state, dict):
+            self.state = AgentState(**result_state)
+        else:
+            raise TypeError(f"Unexpected graph output type: {type(result_state)}")
         
         return {
             "success": not self.state.error_state,
@@ -345,13 +351,17 @@ class MatchingAgent:
             after=refinements,
         )
         
-        # Re-enter ranking node
-        for node, state_snapshot in self.graph.stream(
-            self.state, {"recursion_limit": 10}
-        ):
-            if node == "rank_candidates":
-                self.state = state_snapshot
-                break
+        # Re-rank directly from current cached candidates to avoid unnecessary graph traversal.
+        new_ranked, delta_explanation = rerank_with_constraints(self.state, refinements)
+        if new_ranked:
+            self.state.shortlist = new_ranked
+
+        self.state.add_message("assistant", delta_explanation)
+        self.state.add_explanation("Applied refinement constraints and re-ranked")
+        self.state.last_node_executed = "rank_candidates"
+
+        # Regenerate summary after refinement.
+        self.state = node_generate_report(self.state)
         
         return {
             "success": True,
@@ -491,9 +501,14 @@ Match Score: {cand.get('match_score')}/100
     def export_state(self, filepath: str = None) -> str:
         """Export state to JSON."""
         if not filepath:
-            filepath = f"/tmp/agent_state_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+            filename = f"agent_state_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+            filepath = os.path.join("exports", filename)
+
+        export_dir = os.path.dirname(filepath)
+        if export_dir:
+            os.makedirs(export_dir, exist_ok=True)
         
-        with open(filepath, "w") as f:
+        with open(filepath, "w", encoding="utf-8") as f:
             f.write(self.state.to_json())
         
         return filepath

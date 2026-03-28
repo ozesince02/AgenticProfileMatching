@@ -100,6 +100,34 @@ OPERATOR COMMANDS (prefix with /):
             self.console.print(help_text, style="bright_black")
         else:
             print(help_text)
+
+    def _print_recent_assistant_messages(self, max_messages: int = 3):
+        """Print the most recent assistant messages for user-visible actions."""
+        assistant_msgs = [m.content for m in self.agent.state.messages if m.role == "assistant"]
+        if not assistant_msgs:
+            return
+
+        recent = assistant_msgs[-max_messages:]
+        block = "\n\n".join(recent)
+        if self.console:
+            self.console.print(block, style="blue")
+        else:
+            print(block)
+
+    def _safe_auto_export(self):
+        """Best-effort session export on exit."""
+        try:
+            if self.agent.state.messages:
+                filepath = self.agent.export_state()
+                if self.console:
+                    self.console.print(f"✅ Session auto-exported to: {filepath}", style="green")
+                else:
+                    print(f"✅ Session auto-exported to: {filepath}")
+        except Exception as e:
+            if self.console:
+                self.console.print(f"⚠️ Could not auto-export session: {e}", style="yellow")
+            else:
+                print(f"⚠️ Could not auto-export session: {e}")
     
     def classify_intent(self, query: str) -> str:
         """Route query to appropriate intent."""
@@ -183,20 +211,26 @@ OPERATOR COMMANDS (prefix with /):
         
         elif cmd == "round2":
             result = self.agent.start_round2_analysis()
-            if "error" not in result:
+            if "error" in result:
+                print(f"❌ {result['error']}")
+            else:
                 if self.console:
                     self.console.print("✅ Round 2 started", style="green")
                 else:
                     print("✅ Round 2 started")
+                self._print_recent_assistant_messages(max_messages=3)
             return "ROUND2"
         
         elif cmd == "round3":
             result = self.agent.start_round3_final()
-            if "error" not in result:
+            if "error" in result:
+                print(f"❌ {result['error']}")
+            else:
                 if self.console:
                     self.console.print("✅ Round 3 started", style="green")
                 else:
                     print("✅ Round 3 started")
+                self._print_recent_assistant_messages(max_messages=6)
             return "ROUND3"
         
         elif cmd in ["exit", "quit", "q"]:
@@ -244,8 +278,10 @@ OPERATOR COMMANDS (prefix with /):
     
     def handle_compare(self, query: str):
         """Handle COMPARE intent."""
-        # Extract candidate names
-        candidates = re.findall(r"\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)\b", query)
+        # Extract candidate names from free-form compare query (case-insensitive).
+        body = re.sub(r"(?i)^\s*compare\s+", "", query).strip()
+        parts = re.split(r"(?i)\s*(?:,|and|vs|versus)\s*", body)
+        candidates = [p.strip(" .!?:;") for p in parts if p.strip()]
         
         if len(candidates) < 2:
             print("❌ Please specify at least 2 candidates to compare. Example: 'Compare Sneha and Arjun'")
@@ -284,18 +320,29 @@ OPERATOR COMMANDS (prefix with /):
     def handle_refine(self, query: str):
         """Handle REFINE intent."""
         refinements = {}
-        
-        # Extract required skills
-        skill_match = re.search(r"with\s+([^,]+(?:,\s*[^,]+)*)", query, re.IGNORECASE)
-        if skill_match:
-            skills = [s.strip() for s in skill_match.group(1).split(",")]
-            refinements["skill_filter"] = skills
-        
+
         # Extract experience requirement
         exp_match = re.search(r"(\d+)\s*\+\s*years", query, re.IGNORECASE)
         if exp_match:
             min_exp = float(exp_match.group(1))
             refinements["min_experience"] = min_exp
+
+        # Extract skill terms from the query while removing command words/experience fragments.
+        skill_text = re.sub(r"(?i)\b(filter|refine|show|only|candidates|with|also|by)\b", " ", query)
+        skill_text = re.sub(r"(?i)\b\d+\s*\+\s*years?\b", " ", skill_text)
+        skill_parts = re.split(r"(?i)\s*(?:,|and)\s*", skill_text)
+        skills = []
+        for part in skill_parts:
+            cleaned = re.sub(r"[^a-zA-Z0-9\-\+\.# ]+", " ", part).strip()
+            if not cleaned:
+                continue
+            # Ignore fragments that are clearly not skill-like.
+            if cleaned.lower() in {"years", "year", "minimum", "experience"}:
+                continue
+            skills.append(cleaned)
+
+        if skills:
+            refinements["skill_filter"] = skills
         
         if not refinements:
             print("❌ Could not parse refinement. Example: 'Filter by Python, Docker, with 5+ years'")
@@ -438,6 +485,7 @@ OPERATOR COMMANDS (prefix with /):
                 intent = self.classify_intent(user_input)
                 
                 if intent == "EXIT":
+                    self._safe_auto_export()
                     print("\n✅ Thank you! Bye!")
                     self.running = False
                     break
@@ -464,10 +512,18 @@ OPERATOR COMMANDS (prefix with /):
                     self.handle_load_job(user_input)
                 
                 elif intent == "ROUND2":
-                    self.agent.start_round2_analysis()
+                    result = self.agent.start_round2_analysis()
+                    if "error" in result:
+                        print(f"❌ {result['error']}")
+                    else:
+                        self._print_recent_assistant_messages(max_messages=3)
                 
                 elif intent == "ROUND3":
-                    self.agent.start_round3_final()
+                    result = self.agent.start_round3_final()
+                    if "error" in result:
+                        print(f"❌ {result['error']}")
+                    else:
+                        self._print_recent_assistant_messages(max_messages=6)
                 
                 elif intent == "UNKNOWN":
                     print("❓ I didn't understand that. Type /help for available commands or try:")
@@ -476,6 +532,7 @@ OPERATOR COMMANDS (prefix with /):
                     print("  'Why did [candidate] rank [position]?'")
             
             except KeyboardInterrupt:
+                self._safe_auto_export()
                 print("\n\n✅ Session interrupted. Bye!")
                 self.running = False
             

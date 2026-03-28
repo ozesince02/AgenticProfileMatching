@@ -5,6 +5,7 @@ env/
 
 # Chroma vector DB (auto-generated, can be rebuilt)
 data/vector_db/
+/exports
 
 # Python cache
 __pycache__/
@@ -25,3 +26,6 @@ Thumbs.db
 # Editor
 .vscode/settings.json
 *.swp
+
+.github/
+docs/

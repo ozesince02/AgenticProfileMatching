@@ -6,6 +6,7 @@ Integrates Gemini for enrichment (with offline fallback).
 """
 
 import os
+import re
 import json
 from typing import Dict, List, Optional, Tuple, Any
 from datetime import datetime
@@ -29,6 +30,13 @@ from resume_rag import (
 )
 from agent_state import AgentState, CandidateScoreBreakdown
 
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except Exception:
+    # Keep runtime resilient if dotenv is unavailable.
+    pass
+
 # Global cache for embedder (avoid re-instantiation per query)
 _embedder_cache: Dict[str, SentenceTransformer] = {}
 
@@ -48,8 +56,9 @@ def init_gemini_client():
     
     try:
         from langchain_google_genai import ChatGoogleGenerativeAI
+        model_name = os.getenv("GEMINI_MODEL", "gemini-pro")
         client = ChatGoogleGenerativeAI(
-            model="gemini-pro",
+            model=model_name,
             google_api_key=api_key,
             temperature=0.7,
         )
@@ -61,6 +70,33 @@ def init_gemini_client():
 
 # Global Gemini client (lazy init)
 _gemini_client = None
+
+
+def _parse_json_from_text(text: str) -> Dict[str, Any]:
+    """Parse JSON from plain or fenced LLM output."""
+    if not text:
+        return {}
+
+    candidate = text.strip()
+    if candidate.startswith("```"):
+        candidate = re.sub(r"^```(?:json)?\s*", "", candidate)
+        candidate = re.sub(r"\s*```$", "", candidate)
+
+    try:
+        parsed = json.loads(candidate)
+        return parsed if isinstance(parsed, dict) else {}
+    except json.JSONDecodeError:
+        pass
+
+    match = re.search(r"\{[\s\S]*\}", candidate)
+    if not match:
+        return {}
+
+    try:
+        parsed = json.loads(match.group(0))
+        return parsed if isinstance(parsed, dict) else {}
+    except json.JSONDecodeError:
+        return {}
 
 def get_gemini_client():
     """Get Gemini client (lazy initialization)."""
@@ -107,7 +143,7 @@ Normalize these to common industry terms (Python, Java, React, etc).
 Return ONLY a JSON with "must_have_normalized" and "good_to_have_normalized" lists.
 """
             response = gemini.invoke(prompt)
-            enriched = json.loads(response.content)
+            enriched = _parse_json_from_text(response.content)
             
             parsed['must_have_skills'] = enriched.get('must_have_normalized', parsed['must_have_skills'])
             parsed['good_to_have_skills'] = enriched.get('good_to_have_normalized', parsed['good_to_have_skills'])
@@ -204,12 +240,18 @@ def compare_candidates(candidate_ids: List[str], state: AgentState) -> Dict[str,
     for cand_id in candidate_ids:
         # Find candidate in state
         cand = None
+        cand_id = (cand_id or "").strip()
+        if not cand_id:
+            continue
         
         # Try by name
         cand = state.get_candidate_by_name(cand_id)
         if not cand:
             # Try by path
             cand = state.get_candidate_by_path(cand_id)
+        if not cand:
+            # Fallback: allow partial/case-insensitive name/path matches.
+            cand = find_candidate_by_pattern(cand_id, state)
         
         if not cand:
             continue
@@ -285,7 +327,7 @@ Generate {num_questions} targeted interview questions for:
 Return ONLY a JSON with "questions" as a list of strings.
 """
             response = gemini.invoke(prompt)
-            result = json.loads(response.content)
+            result = _parse_json_from_text(response.content)
             return {
                 "candidate_name": candidate_name,
                 "resume_path": resume_path,
