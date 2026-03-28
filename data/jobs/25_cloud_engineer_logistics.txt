@@ -1,0 +1,29 @@
+Job Title: Cloud Engineer
+Location: Gurugram
+Industry: Logistics
+Experience Required: 4+ years
+
+Job Description:
+We are looking for a Cloud Engineer to help build and scale products in the Logistics domain.
+You will work with product, engineering, and business teams to deliver high-impact outcomes.
+
+Must-Have Skills:
+- GCP
+- Python
+- Terraform
+- CI/CD
+
+Good-to-Have Skills:
+- Agile
+- Kubernetes
+- Docker
+
+Responsibilities:
+- Build and maintain production-grade solutions
+- Collaborate across teams and drive delivery
+- Improve reliability, performance, and quality
+
+Selection Criteria:
+- Relevant project or production experience
+- Strong communication and ownership
+- Ability to solve ambiguous problems

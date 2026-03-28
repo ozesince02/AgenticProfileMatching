@@ -1,0 +1,24 @@
+Name: Naveen Kulkarni
+Location: Mumbai
+Target Role: Product Manager
+
+Summary:
+Results-driven Product Manager with 6+ years of experience in EdTech. Strong focus on scalable systems, measurable impact, and business outcomes.
+
+Skills:
+Jira, A/B Testing, User Stories, Analytics, Agile
+
+Experience:
+- Product Manager, EdTech Company (2020 - 2026)
+  - Built and improved product manager solutions in EdTech, reducing processing time by 19%.
+  - Collaborated with cross-functional teams and delivered 7 production releases.
+
+Projects:
+- EdTech Intelligence Platform: Designed end-to-end solution using Jira and A/B Testing.
+- Automated KPI Dashboard for EdTech: Improved reporting accuracy and decision speed using User Stories.
+
+Education:
+- MBA Analytics, Tier-1 University
+
+Certifications:
+- Azure Fundamentals

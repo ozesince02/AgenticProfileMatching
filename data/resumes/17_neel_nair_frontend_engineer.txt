@@ -1,0 +1,24 @@
+Name: Neel Nair
+Location: Chennai
+Target Role: Frontend Engineer
+
+Summary:
+Results-driven Frontend Engineer with 1+ years of experience in Healthcare. Strong focus on scalable systems, measurable impact, and business outcomes.
+
+Skills:
+TypeScript, React, Next.js, Redux, CSS
+
+Experience:
+- Frontend Engineer, Healthcare Company (2025 - 2026)
+  - Built and improved frontend engineer solutions in Healthcare, reducing processing time by 19%.
+  - Collaborated with cross-functional teams and delivered 7 production releases.
+
+Projects:
+- Healthcare Intelligence Platform: Designed end-to-end solution using TypeScript and React.
+- Automated KPI Dashboard for Healthcare: Improved reporting accuracy and decision speed using Next.js.
+
+Education:
+- B.Sc Statistics, Tier-1 University
+
+Certifications:
+- TensorFlow Developer

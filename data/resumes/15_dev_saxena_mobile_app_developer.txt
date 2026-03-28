@@ -1,0 +1,24 @@
+Name: Dev Saxena
+Location: Gurugram
+Target Role: Mobile App Developer
+
+Summary:
+Results-driven Mobile App Developer with 7+ years of experience in Retail. Strong focus on scalable systems, measurable impact, and business outcomes.
+
+Skills:
+REST APIs, Dart, Kotlin, iOS, Android
+
+Experience:
+- Mobile App Developer, Retail Company (2019 - 2026)
+  - Built and improved mobile app developer solutions in Retail, reducing processing time by 29%.
+  - Collaborated with cross-functional teams and delivered 6 production releases.
+
+Projects:
+- Retail Intelligence Platform: Designed end-to-end solution using REST APIs and Dart.
+- Automated KPI Dashboard for Retail: Improved reporting accuracy and decision speed using Kotlin.
+
+Education:
+- MBA Analytics, Tier-1 University
+
+Certifications:
+- Scrum Master

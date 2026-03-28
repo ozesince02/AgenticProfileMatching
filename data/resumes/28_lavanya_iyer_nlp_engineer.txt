@@ -1,0 +1,24 @@
+Name: Lavanya Iyer
+Location: Mumbai
+Target Role: NLP Engineer
+
+Summary:
+Results-driven NLP Engineer with 3+ years of experience in Healthcare. Strong focus on scalable systems, measurable impact, and business outcomes.
+
+Skills:
+Vector Databases, LLMs, Transformers, spaCy, RAG
+
+Experience:
+- NLP Engineer, Healthcare Company (2023 - 2026)
+  - Built and improved nlp engineer solutions in Healthcare, reducing processing time by 34%.
+  - Collaborated with cross-functional teams and delivered 3 production releases.
+
+Projects:
+- Healthcare Intelligence Platform: Designed end-to-end solution using Vector Databases and LLMs.
+- Automated KPI Dashboard for Healthcare: Improved reporting accuracy and decision speed using Transformers.
+
+Education:
+- B.Tech CSE, Tier-1 University
+
+Certifications:
+- Azure Fundamentals

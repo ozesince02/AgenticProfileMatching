@@ -1,0 +1,24 @@
+Name: Kriti Nair
+Location: Gurugram
+Target Role: Product Manager
+
+Summary:
+Results-driven Product Manager with 11+ years of experience in Gaming. Strong focus on scalable systems, measurable impact, and business outcomes.
+
+Skills:
+Agile, User Stories, Roadmapping, A/B Testing, Analytics
+
+Experience:
+- Product Manager, Gaming Company (2015 - 2026)
+  - Built and improved product manager solutions in Gaming, reducing processing time by 28%.
+  - Collaborated with cross-functional teams and delivered 7 production releases.
+
+Projects:
+- Gaming Intelligence Platform: Designed end-to-end solution using Agile and User Stories.
+- Automated KPI Dashboard for Gaming: Improved reporting accuracy and decision speed using Roadmapping.
+
+Education:
+- B.Tech CSE, Tier-1 University
+
+Certifications:
+- TensorFlow Developer

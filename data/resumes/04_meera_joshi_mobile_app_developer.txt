@@ -1,0 +1,24 @@
+Name: Meera Joshi
+Location: Mumbai
+Target Role: Mobile App Developer
+
+Summary:
+Results-driven Mobile App Developer with 10+ years of experience in FinTech. Strong focus on scalable systems, measurable impact, and business outcomes.
+
+Skills:
+Android, iOS, Flutter, Dart, REST APIs
+
+Experience:
+- Mobile App Developer, FinTech Company (2016 - 2026)
+  - Built and improved mobile app developer solutions in FinTech, reducing processing time by 32%.
+  - Collaborated with cross-functional teams and delivered 4 production releases.
+
+Projects:
+- FinTech Intelligence Platform: Designed end-to-end solution using Android and iOS.
+- Automated KPI Dashboard for FinTech: Improved reporting accuracy and decision speed using Flutter.
+
+Education:
+- MBA Analytics, Tier-1 University
+
+Certifications:
+- TensorFlow Developer

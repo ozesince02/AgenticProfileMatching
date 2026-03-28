@@ -1,0 +1,24 @@
+Name: Rahul Kulkarni
+Location: Jaipur
+Target Role: Business Analyst
+
+Summary:
+Results-driven Business Analyst with 1+ years of experience in Logistics. Strong focus on scalable systems, measurable impact, and business outcomes.
+
+Skills:
+SQL, Stakeholder Management, Power BI, Excel, Requirements Gathering
+
+Experience:
+- Business Analyst, Logistics Company (2025 - 2026)
+  - Built and improved business analyst solutions in Logistics, reducing processing time by 16%.
+  - Collaborated with cross-functional teams and delivered 3 production releases.
+
+Projects:
+- Logistics Intelligence Platform: Designed end-to-end solution using SQL and Stakeholder Management.
+- Automated KPI Dashboard for Logistics: Improved reporting accuracy and decision speed using Power BI.
+
+Education:
+- MCA, Tier-1 University
+
+Certifications:
+- TensorFlow Developer

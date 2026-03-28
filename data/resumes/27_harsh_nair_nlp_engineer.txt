@@ -1,0 +1,24 @@
+Name: Harsh Nair
+Location: Chennai
+Target Role: NLP Engineer
+
+Summary:
+Results-driven NLP Engineer with 4+ years of experience in SaaS. Strong focus on scalable systems, measurable impact, and business outcomes.
+
+Skills:
+NLTK, LLMs, spaCy, Python, Vector Databases
+
+Experience:
+- NLP Engineer, SaaS Company (2022 - 2026)
+  - Built and improved nlp engineer solutions in SaaS, reducing processing time by 41%.
+  - Collaborated with cross-functional teams and delivered 6 production releases.
+
+Projects:
+- SaaS Intelligence Platform: Designed end-to-end solution using NLTK and LLMs.
+- Automated KPI Dashboard for SaaS: Improved reporting accuracy and decision speed using spaCy.
+
+Education:
+- B.E. IT, Tier-1 University
+
+Certifications:
+- Azure Fundamentals

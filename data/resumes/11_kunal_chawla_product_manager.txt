@@ -1,0 +1,24 @@
+Name: Kunal Chawla
+Location: Mumbai
+Target Role: Product Manager
+
+Summary:
+Results-driven Product Manager with 9+ years of experience in Retail. Strong focus on scalable systems, measurable impact, and business outcomes.
+
+Skills:
+Jira, Roadmapping, A/B Testing, Analytics, User Stories
+
+Experience:
+- Product Manager, Retail Company (2017 - 2026)
+  - Built and improved product manager solutions in Retail, reducing processing time by 18%.
+  - Collaborated with cross-functional teams and delivered 4 production releases.
+
+Projects:
+- Retail Intelligence Platform: Designed end-to-end solution using Jira and Roadmapping.
+- Automated KPI Dashboard for Retail: Improved reporting accuracy and decision speed using A/B Testing.
+
+Education:
+- B.Tech CSE, Tier-1 University
+
+Certifications:
+- Scrum Master

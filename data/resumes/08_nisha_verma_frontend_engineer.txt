@@ -1,0 +1,24 @@
+Name: Nisha Verma
+Location: Noida
+Target Role: Frontend Engineer
+
+Summary:
+Results-driven Frontend Engineer with 6+ years of experience in SaaS. Strong focus on scalable systems, measurable impact, and business outcomes.
+
+Skills:
+TypeScript, HTML, React, Redux, CSS
+
+Experience:
+- Frontend Engineer, SaaS Company (2020 - 2026)
+  - Built and improved frontend engineer solutions in SaaS, reducing processing time by 30%.
+  - Collaborated with cross-functional teams and delivered 5 production releases.
+
+Projects:
+- SaaS Intelligence Platform: Designed end-to-end solution using TypeScript and HTML.
+- Automated KPI Dashboard for SaaS: Improved reporting accuracy and decision speed using React.
+
+Education:
+- B.Tech CSE, Tier-1 University
+
+Certifications:
+- Scrum Master

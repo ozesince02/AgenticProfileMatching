@@ -1,0 +1,29 @@
+Job Title: Full Stack Engineer
+Location: Mumbai
+Industry: Healthcare
+Experience Required: 3+ years
+
+Job Description:
+We are looking for a Full Stack Engineer to help build and scale products in the Healthcare domain.
+You will work with product, engineering, and business teams to deliver high-impact outcomes.
+
+Must-Have Skills:
+- PostgreSQL
+- MongoDB
+- Express
+- Node.js
+
+Good-to-Have Skills:
+- AWS
+- Azure
+- GCP
+
+Responsibilities:
+- Build and maintain production-grade solutions
+- Collaborate across teams and drive delivery
+- Improve reliability, performance, and quality
+
+Selection Criteria:
+- Relevant project or production experience
+- Strong communication and ownership
+- Ability to solve ambiguous problems

@@ -1,0 +1,24 @@
+Name: Aarav Iyer
+Location: Mumbai
+Target Role: QA Engineer
+
+Summary:
+Results-driven QA Engineer with 1+ years of experience in EdTech. Strong focus on scalable systems, measurable impact, and business outcomes.
+
+Skills:
+Cypress, Selenium, Postman, Test Planning, CI/CD
+
+Experience:
+- QA Engineer, EdTech Company (2025 - 2026)
+  - Built and improved qa engineer solutions in EdTech, reducing processing time by 16%.
+  - Collaborated with cross-functional teams and delivered 2 production releases.
+
+Projects:
+- EdTech Intelligence Platform: Designed end-to-end solution using Cypress and Selenium.
+- Automated KPI Dashboard for EdTech: Improved reporting accuracy and decision speed using Postman.
+
+Education:
+- B.E. IT, Tier-1 University
+
+Certifications:
+- AWS Certified

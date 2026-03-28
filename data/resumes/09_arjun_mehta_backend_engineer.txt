@@ -1,0 +1,24 @@
+Name: Arjun Mehta
+Location: Gurugram
+Target Role: Backend Engineer
+
+Summary:
+Results-driven Backend Engineer with 3+ years of experience in Retail. Strong focus on scalable systems, measurable impact, and business outcomes.
+
+Skills:
+Django, REST APIs, Redis, PostgreSQL, Docker
+
+Experience:
+- Backend Engineer, Retail Company (2023 - 2026)
+  - Built and improved backend engineer solutions in Retail, reducing processing time by 27%.
+  - Collaborated with cross-functional teams and delivered 4 production releases.
+
+Projects:
+- Retail Intelligence Platform: Designed end-to-end solution using Django and REST APIs.
+- Automated KPI Dashboard for Retail: Improved reporting accuracy and decision speed using Redis.
+
+Education:
+- B.Sc Statistics, Tier-1 University
+
+Certifications:
+- Google Cloud Associate

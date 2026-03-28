@@ -1,0 +1,29 @@
+Job Title: Data Scientist
+Location: Chennai
+Industry: Gaming
+Experience Required: 4+ years
+
+Job Description:
+We are looking for a Data Scientist to help build and scale products in the Gaming domain.
+You will work with product, engineering, and business teams to deliver high-impact outcomes.
+
+Must-Have Skills:
+- Statistics
+- Pandas
+- Scikit-learn
+- Power BI
+
+Good-to-Have Skills:
+- Agile
+- AWS
+- Docker
+
+Responsibilities:
+- Build and maintain production-grade solutions
+- Collaborate across teams and drive delivery
+- Improve reliability, performance, and quality
+
+Selection Criteria:
+- Relevant project or production experience
+- Strong communication and ownership
+- Ability to solve ambiguous problems

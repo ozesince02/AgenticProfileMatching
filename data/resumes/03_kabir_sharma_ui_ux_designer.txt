@@ -1,0 +1,24 @@
+Name: Kabir Sharma
+Location: Noida
+Target Role: UI/UX Designer
+
+Summary:
+Results-driven UI/UX Designer with 3+ years of experience in Logistics. Strong focus on scalable systems, measurable impact, and business outcomes.
+
+Skills:
+Wireframing, Design Systems, User Research, Figma, Prototyping
+
+Experience:
+- UI/UX Designer, Logistics Company (2023 - 2026)
+  - Built and improved ui/ux designer solutions in Logistics, reducing processing time by 27%.
+  - Collaborated with cross-functional teams and delivered 2 production releases.
+
+Projects:
+- Logistics Intelligence Platform: Designed end-to-end solution using Wireframing and Design Systems.
+- Automated KPI Dashboard for Logistics: Improved reporting accuracy and decision speed using User Research.
+
+Education:
+- M.Tech AI, Tier-1 University
+
+Certifications:
+- Azure Fundamentals

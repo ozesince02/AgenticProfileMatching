@@ -1,0 +1,24 @@
+Name: Vikram Reddy
+Location: Kolkata
+Target Role: Cybersecurity Analyst
+
+Summary:
+Results-driven Cybersecurity Analyst with 3+ years of experience in Gaming. Strong focus on scalable systems, measurable impact, and business outcomes.
+
+Skills:
+OWASP, Python, Network Security, SOC, Incident Response
+
+Experience:
+- Cybersecurity Analyst, Gaming Company (2023 - 2026)
+  - Built and improved cybersecurity analyst solutions in Gaming, reducing processing time by 41%.
+  - Collaborated with cross-functional teams and delivered 8 production releases.
+
+Projects:
+- Gaming Intelligence Platform: Designed end-to-end solution using OWASP and Python.
+- Automated KPI Dashboard for Gaming: Improved reporting accuracy and decision speed using Network Security.
+
+Education:
+- M.Tech AI, Tier-1 University
+
+Certifications:
+- AWS Certified

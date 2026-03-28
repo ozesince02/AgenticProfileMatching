@@ -1,0 +1,24 @@
+Name: Riya Pillai
+Location: Kolkata
+Target Role: Product Manager
+
+Summary:
+Results-driven Product Manager with 4+ years of experience in Gaming. Strong focus on scalable systems, measurable impact, and business outcomes.
+
+Skills:
+Roadmapping, Jira, Analytics, User Stories, A/B Testing
+
+Experience:
+- Product Manager, Gaming Company (2022 - 2026)
+  - Built and improved product manager solutions in Gaming, reducing processing time by 28%.
+  - Collaborated with cross-functional teams and delivered 5 production releases.
+
+Projects:
+- Gaming Intelligence Platform: Designed end-to-end solution using Roadmapping and Jira.
+- Automated KPI Dashboard for Gaming: Improved reporting accuracy and decision speed using Analytics.
+
+Education:
+- B.E. IT, Tier-1 University
+
+Certifications:
+- AWS Certified

@@ -1,0 +1,24 @@
+Name: Ananya Chawla
+Location: Chennai
+Target Role: Full Stack Engineer
+
+Summary:
+Results-driven Full Stack Engineer with 11+ years of experience in E-commerce. Strong focus on scalable systems, measurable impact, and business outcomes.
+
+Skills:
+Node.js, React, Docker, JavaScript, MongoDB
+
+Experience:
+- Full Stack Engineer, E-commerce Company (2015 - 2026)
+  - Built and improved full stack engineer solutions in E-commerce, reducing processing time by 35%.
+  - Collaborated with cross-functional teams and delivered 3 production releases.
+
+Projects:
+- E-commerce Intelligence Platform: Designed end-to-end solution using Node.js and React.
+- Automated KPI Dashboard for E-commerce: Improved reporting accuracy and decision speed using Docker.
+
+Education:
+- M.Tech AI, Tier-1 University
+
+Certifications:
+- TensorFlow Developer

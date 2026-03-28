@@ -1,0 +1,24 @@
+Name: Isha Reddy
+Location: Jaipur
+Target Role: Frontend Engineer
+
+Summary:
+Results-driven Frontend Engineer with 9+ years of experience in FinTech. Strong focus on scalable systems, measurable impact, and business outcomes.
+
+Skills:
+TypeScript, CSS, HTML, Next.js, JavaScript
+
+Experience:
+- Frontend Engineer, FinTech Company (2017 - 2026)
+  - Built and improved frontend engineer solutions in FinTech, reducing processing time by 29%.
+  - Collaborated with cross-functional teams and delivered 6 production releases.
+
+Projects:
+- FinTech Intelligence Platform: Designed end-to-end solution using TypeScript and CSS.
+- Automated KPI Dashboard for FinTech: Improved reporting accuracy and decision speed using HTML.
+
+Education:
+- B.Sc Statistics, Tier-1 University
+
+Certifications:
+- Azure Fundamentals

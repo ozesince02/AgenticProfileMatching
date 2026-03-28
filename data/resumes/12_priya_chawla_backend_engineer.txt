@@ -1,0 +1,24 @@
+Name: Priya Chawla
+Location: Mumbai
+Target Role: Backend Engineer
+
+Summary:
+Results-driven Backend Engineer with 1+ years of experience in Retail. Strong focus on scalable systems, measurable impact, and business outcomes.
+
+Skills:
+Redis, Python, Django, FastAPI, REST APIs
+
+Experience:
+- Backend Engineer, Retail Company (2025 - 2026)
+  - Built and improved backend engineer solutions in Retail, reducing processing time by 26%.
+  - Collaborated with cross-functional teams and delivered 8 production releases.
+
+Projects:
+- Retail Intelligence Platform: Designed end-to-end solution using Redis and Python.
+- Automated KPI Dashboard for Retail: Improved reporting accuracy and decision speed using Django.
+
+Education:
+- B.E. IT, Tier-1 University
+
+Certifications:
+- Google Cloud Associate

@@ -1,0 +1,29 @@
+Job Title: QA Engineer
+Location: Jaipur
+Industry: E-commerce
+Experience Required: 2+ years
+
+Job Description:
+We are looking for a QA Engineer to help build and scale products in the E-commerce domain.
+You will work with product, engineering, and business teams to deliver high-impact outcomes.
+
+Must-Have Skills:
+- Test Planning
+- API Testing
+- Selenium
+- Cypress
+
+Good-to-Have Skills:
+- Kubernetes
+- Docker
+- Communication
+
+Responsibilities:
+- Build and maintain production-grade solutions
+- Collaborate across teams and drive delivery
+- Improve reliability, performance, and quality
+
+Selection Criteria:
+- Relevant project or production experience
+- Strong communication and ownership
+- Ability to solve ambiguous problems

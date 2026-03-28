@@ -1,0 +1,24 @@
+Name: Tara Reddy
+Location: Hyderabad
+Target Role: ML Engineer
+
+Summary:
+Results-driven ML Engineer with 4+ years of experience in Logistics. Strong focus on scalable systems, measurable impact, and business outcomes.
+
+Skills:
+Docker, AWS, PyTorch, Kubernetes, Python
+
+Experience:
+- ML Engineer, Logistics Company (2022 - 2026)
+  - Built and improved ml engineer solutions in Logistics, reducing processing time by 17%.
+  - Collaborated with cross-functional teams and delivered 7 production releases.
+
+Projects:
+- Logistics Intelligence Platform: Designed end-to-end solution using Docker and AWS.
+- Automated KPI Dashboard for Logistics: Improved reporting accuracy and decision speed using PyTorch.
+
+Education:
+- B.Tech CSE, Tier-1 University
+
+Certifications:
+- AWS Certified

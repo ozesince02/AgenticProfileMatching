@@ -1,0 +1,24 @@
+Name: Aditi Malhotra
+Location: Ahmedabad
+Target Role: Full Stack Engineer
+
+Summary:
+Results-driven Full Stack Engineer with 12+ years of experience in Media. Strong focus on scalable systems, measurable impact, and business outcomes.
+
+Skills:
+React, Node.js, Docker, JavaScript, PostgreSQL
+
+Experience:
+- Full Stack Engineer, Media Company (2014 - 2026)
+  - Built and improved full stack engineer solutions in Media, reducing processing time by 38%.
+  - Collaborated with cross-functional teams and delivered 6 production releases.
+
+Projects:
+- Media Intelligence Platform: Designed end-to-end solution using React and Node.js.
+- Automated KPI Dashboard for Media: Improved reporting accuracy and decision speed using Docker.
+
+Education:
+- B.E. IT, Tier-1 University
+
+Certifications:
+- AWS Certified

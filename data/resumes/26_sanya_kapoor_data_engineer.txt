@@ -1,0 +1,24 @@
+Name: Sanya Kapoor
+Location: Bengaluru
+Target Role: Data Engineer
+
+Summary:
+Results-driven Data Engineer with 2+ years of experience in Media. Strong focus on scalable systems, measurable impact, and business outcomes.
+
+Skills:
+Kafka, Python, ETL, SQL, Spark
+
+Experience:
+- Data Engineer, Media Company (2024 - 2026)
+  - Built and improved data engineer solutions in Media, reducing processing time by 23%.
+  - Collaborated with cross-functional teams and delivered 3 production releases.
+
+Projects:
+- Media Intelligence Platform: Designed end-to-end solution using Kafka and Python.
+- Automated KPI Dashboard for Media: Improved reporting accuracy and decision speed using ETL.
+
+Education:
+- B.Sc Statistics, Tier-1 University
+
+Certifications:
+- Azure Fundamentals
